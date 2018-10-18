@@ -12,6 +12,8 @@ public class Quadrado extends Geometria {
         super();
 
         this.setTamanho(tamanho);
+        this.setIdFigura(2);
+
         openGL.glEnableClientState(GL10.GL_VERTEX_ARRAY);
         this.setOpenGL(openGL);
 
@@ -27,6 +29,7 @@ public class Quadrado extends Geometria {
                 tamanho / 2, -tamanho / 2,
                 tamanho / 2, tamanho / 2
         };
+
 
         //Cria o vetor de coordenadas
         FloatBuffer buffer1 = GeraBuffer.generateBuffer(vetCoords1);

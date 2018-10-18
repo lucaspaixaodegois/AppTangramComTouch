@@ -5,6 +5,7 @@ import android.opengl.GLSurfaceView;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import br.to.lucaspg.mytangramtotesttouch.figurasGeometricas.Geometria;
 import br.to.lucaspg.mytangramtotesttouch.figurasGeometricas.Paralelogramo;
 import br.to.lucaspg.mytangramtotesttouch.figurasGeometricas.Quadrado;
 import br.to.lucaspg.mytangramtotesttouch.figurasGeometricas.Triangulo;

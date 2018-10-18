@@ -1,29 +1,59 @@
 package br.to.lucaspg.mytangramtotesttouch;
 
+
 import android.app.Activity;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 
-//Classe principal do APP//implements SensorEventListener
+//Classe principal do APP
 public class MainActivityTangramToTestTouch extends Activity {
+
 
     private GLSurfaceView superficieDesenho = null;//Declara uma referenci para a superfice de desenho.
     private Renderizador render = null; //inicia um objeto render do tipo renderizador
-    //testando outros desenhos
-    private RenderFigura7 render1 = null;//inicia um objeto RenderFigura7 do tipo renderizador
-    private RenderFigura17 render2 = null;//inicia um objeto RenderFigura7 do tipo renderizador
+    long startTime;
+    static final int MAX_DURATION = 100;
 
     protected void onCreate(Bundle savedInstanceState) {//metodo chamado quando o app é inicializado.
 
         super.onCreate(savedInstanceState);//2- Instancia um objeto da superficie de desenho.
+
         this.superficieDesenho = new GLSurfaceView(this); //publica a superficie de desenho na tela.
         this.render = new Renderizador();//publica,instancia render.
-
-        //testando outros desenhos
-        this.render1 = new RenderFigura7();// para rodar  outro desenho na mesma superficie
-        this.render2 = new RenderFigura17(); // para rodar outro desenho na mesma superficie
         this.superficieDesenho.setRenderer(this.render);//Configura o objeto que será desenhado na superficie desenho.
+        // this.superficieDesenho.setOnTouchListener(this.render); //espera como parametro uma classe q implementa o onthouchlistener
         setContentView(this.superficieDesenho);//publica  a superficie desenho.
+
     }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        float x = event.getX();
+        float y = event.getY();
+        int action = event.getAction();
+
+        if (event.getAction() == MotionEvent.ACTION_UP) {
+
+            startTime = System.currentTimeMillis();
+
+        } else if (event.getAction() == MotionEvent.ACTION_DOWN) {
+
+            if (System.currentTimeMillis() - startTime <= MAX_DURATION) {
+                action = 4;
+            } else if (System.currentTimeMillis() - startTime <= MAX_DURATION + 100) {
+                action = 3;
+            }
+
+        }
+
+        this.render.setCoordTouch(x, y, action);
+
+        return super.onTouchEvent(event);
+
+    }
+
 
 }

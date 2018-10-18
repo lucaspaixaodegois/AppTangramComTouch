@@ -1,6 +1,5 @@
 package br.to.lucaspg.mytangramtotesttouch.figurasGeometricas;
 
-
 import javax.microedition.khronos.opengles.GL10;
 
 public abstract class Geometria {
@@ -34,6 +33,16 @@ public abstract class Geometria {
     private int tamanho;
     private GL10 openGL = null;
 
+    public int getIdFigura() {
+        return idFigura;
+    }
+
+    public void setIdFigura(int idFigura) {
+        this.idFigura = idFigura;
+    }
+
+    private int idFigura = 0;
+
     //CONSTRUTOR
 
     public Geometria() {
@@ -46,6 +55,7 @@ public abstract class Geometria {
         this.setPosX(0);
         this.setPosY(0);
         this.setPosZ(0);
+
 
         this.setScaleX(1);
         this.setScaleY(1);
@@ -77,6 +87,7 @@ public abstract class Geometria {
     }
 
     public void setRotation(float angle) {
+
         this.setRotationAngle(angle);
     }
 

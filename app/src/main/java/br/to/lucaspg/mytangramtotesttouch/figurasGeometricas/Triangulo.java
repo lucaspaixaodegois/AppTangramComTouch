@@ -4,6 +4,7 @@ import java.nio.FloatBuffer;
 
 import javax.microedition.khronos.opengles.GL10;
 
+
 public class Triangulo extends Geometria {
     private float[] vet_coords = null;
     private FloatBuffer buffer = null;
@@ -12,6 +13,7 @@ public class Triangulo extends Geometria {
         super();
 
         this.setTamanho(tamanho);
+        this.setIdFigura(1);
         openGL.glEnableClientState(GL10.GL_VERTEX_ARRAY);
         this.setOpenGL(openGL);
 
@@ -21,9 +23,9 @@ public class Triangulo extends Geometria {
 
         int tamanho = this.getTamanho();
 
-        float[] vetCoords1 = {-tamanho / 2, -tamanho / 2,
-                -tamanho / 2, tamanho / 2,
-                tamanho / 2, tamanho / 2
+        float[] vetCoords1 = {-tamanho/2, -tamanho/2,
+                -tamanho/2, tamanho/2,
+                tamanho/2, tamanho/2
         };
 
         //Cria o vetor de coordenadas

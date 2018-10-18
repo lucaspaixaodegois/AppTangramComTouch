@@ -1,8 +1,11 @@
 package br.to.lucaspg.mytangramtotesttouch.figurasGeometricas;
 
+
 import java.nio.FloatBuffer;
 
+
 import javax.microedition.khronos.opengles.GL10;
+
 
 public class Paralelogramo extends Geometria {
     private float[] vet_coords = null;
@@ -12,6 +15,8 @@ public class Paralelogramo extends Geometria {
 
         super();
         this.setTamanho(tamanho);
+        this.setIdFigura(3);
+
         openGL.glEnableClientState(GL10.GL_VERTEX_ARRAY);
         this.setOpenGL(openGL);
 
@@ -22,10 +27,10 @@ public class Paralelogramo extends Geometria {
         int tamanho = this.getTamanho();
         float lin = 1;
         float[] vetCoords1 = {
-                -tamanho / 2, -tamanho / 2,
-                0, -tamanho / 2,
-                0, tamanho / 2,
-                tamanho / 2, tamanho / 2
+                -tamanho/2, -tamanho/2,
+                0, -tamanho/2,
+                0, tamanho/2,
+                tamanho/2, tamanho/2
         };
 
         //Cria o vetor de coordenadas
