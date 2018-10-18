@@ -10,7 +10,6 @@ import android.view.View;
 //Classe principal do APP
 public class MainActivityTangramToTestTouch extends Activity {
 
-
     private GLSurfaceView superficieDesenho = null;//Declara uma referenci para a superfice de desenho.
     private Renderizador render = null; //inicia um objeto render do tipo renderizador
     long startTime;
